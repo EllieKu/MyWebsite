@@ -6,9 +6,8 @@
  至於支援<canvas>的瀏覽器則是會正常解析<canvas>，忽略替代內容。
 
  ## 支援性檢查
-```
+```js
 var canvas = document.getElementById('tutorial');
-
 if (canvas.getContext){
   var ctx = canvas.getContext('2d');
   // drawing code here
@@ -16,3 +15,18 @@ if (canvas.getContext){
   // canvas-unsupported code here
 }
 ```
+
+##　畫矩形
+```
+fillRect(x, y, width, height)
+```
+填滿的矩形
+
+```
+strokeRect(x, y, width, height)
+```
+矩形的邊框
+```
+clearRect(x, y, width, height)
+```
+清除指定矩形區域內的內容，使其變為全透明
