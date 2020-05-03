@@ -1,11 +1,11 @@
 # canvas 學習  2020/05/03
 
 * 沒有src和alt屬性，只有width(預設300px)和height(預設150px)
-
 * 不支援<canvas>的瀏覽器看到不認識的<canvas>時會忽略<canvas>，而此時在<canvas>下瀏覽器認識的替代內容則會被瀏覽器解析顯示，
  至於支援<canvas>的瀏覽器則是會正常解析<canvas>，忽略替代內容。
 
 ## 支援性檢查
+
 ```js
 var canvas = document.getElementById('tutorial');
 if (canvas.getContext){
@@ -15,8 +15,16 @@ if (canvas.getContext){
   // canvas-unsupported code here
 }
 ```
+
 ## 畫矩形
 
-* fillRect(x, y, width, height) --填滿的矩形
-* strokeRect(x, y, width, height) --矩形的邊框
-* clearRect(x, y, width, height) --清除指定矩形區域內的內容，使其變為全透明
+* `fillRect(x, y, width, height)` --填滿的矩形
+* `strokeRect(x, y, width, height)` --矩形的邊框
+* `clearRect(x, y, width, height)` --清除指定矩形區域內的內容，使其變為全透明
+
+## 路徑繪製
+ * `beginPath()` --開始新路徑，再使用繪圖指令設定路徑
+ * `closePath()` --關閉路徑
+ 
+ ### 繪圖指令 ([路徑API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_usage))
+
