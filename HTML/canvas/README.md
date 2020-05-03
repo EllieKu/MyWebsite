@@ -35,7 +35,7 @@ if (canvas.getContext){
      弧度測量是相對於x軸，anticlockwise為true代表逆時針作圖、false代表順時針作圖。
   * `quadraticCurveTo(cp1x, cp1y, x, y)` --弧形(二次貝茲曲線),從目前起始點畫一條二次貝茲曲線到x, y指定的終點，控制點由cp1x, cp1y指定。
   * `bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)` --弧形(三次貝茲曲線),從目前起始點畫一條三次貝茲曲線到x, y指定的終點，控制點由(cp1x, cp1y)和(cp2x, cp2y)指定。
-    ![Bezier curve](pic\Bezier curve.png)
+    ![Bezier curve](https://media.prod.mdn.mozit.cloud/attachments/2012/07/09/223/c6ec7dd953e455094b46f514ba24680c/Canvas_curves.png)
   * `rect(x, y, width, height)` --畫一個左上角位於(x, y)、寬width、高height的矩形。
   * ``
 
