@@ -17,7 +17,6 @@ if (canvas.getContext){
 ```
 
 ## 畫矩形
-
 * `fillRect(x, y, width, height)` --填滿的矩形
 * `strokeRect(x, y, width, height)` --矩形的邊框
 * `clearRect(x, y, width, height)` --清除指定矩形區域內的內容，使其變為全透明
@@ -25,6 +24,18 @@ if (canvas.getContext){
 ## 路徑繪製
  * `beginPath()` --開始新路徑，再使用繪圖指令設定路徑
  * `closePath()` --關閉路徑
- 
+
  ### 繪圖指令 ([路徑API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_usage))
+  * `stroke()` --畫出圖形邊框
+  * `fill()` --填滿路徑內容
+  * `moveTo(x,y)` --移動畫筆到指定的(x,y)座標點
+  * `lineTo(x,y)` --從目前繪畫點畫一直線到指定(x,y)座標點
+  * `arc(x, y, radius, startAngle, endAngle, anticlockwise)` --畫弧形
+     x, y代表圓心座標點，radius代表半徑，startAngle, endAngle分別代表沿著弧形曲線上的起始點與結束點的弧度，
+     弧度測量是相對於x軸，anticlockwise為true代表逆時針作圖、false代表順時針作圖。
+  * `quadraticCurveTo(cp1x, cp1y, x, y)` --弧形(二次貝茲曲線),從目前起始點畫一條二次貝茲曲線到x, y指定的終點，控制點由cp1x, cp1y指定。
+  * `bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)` --弧形(三次貝茲曲線),從目前起始點畫一條三次貝茲曲線到x, y指定的終點，控制點由(cp1x, cp1y)和(cp2x, cp2y)指定。
+    ![Bezier curve](pic\Bezier curve.png)
+  * `rect(x, y, width, height)` --畫一個左上角位於(x, y)、寬width、高height的矩形。
+  * ``
 
