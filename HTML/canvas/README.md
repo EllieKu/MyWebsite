@@ -41,7 +41,7 @@ if (canvas.getContext){
 * `rect(x, y, width, height)` --矩形,左上角位於(x, y)、寬width、高height
 
 ### Path2D Object
-* ` [Path2D()](https://developer.mozilla.org/zh-CN/docs/Web/API/Path2D/Path2D) ` 讓我們可以快取和記錄繪圖指令，方便快速重複地繪圖
+* [Path2D()](https://developer.mozilla.org/zh-CN/docs/Web/API/Path2D/Path2D) 讓我們可以快取和記錄繪圖指令，方便快速重複地繪圖
 
 ## 樣式
 ### 顏色
