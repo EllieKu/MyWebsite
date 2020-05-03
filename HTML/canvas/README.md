@@ -44,19 +44,19 @@ if (canvas.getContext){
   * `[Path2D()](https://developer.mozilla.org/zh-CN/docs/Web/API/Path2D/Path2D)` 讓我們可以快取和記錄繪圖指令，方便快速重複地繪圖
 
   ## 樣式
-    >顏色
-    >>* `fillStyle = color` --顏色-填滿圖形
-    >>* `strokeStyle = color` --顏色-勾勒圖形
-    >>* `globalAlpha = transparencyValue` --透明度-0.0(全透明)~1.0(不透明)。一旦設定畫布上所有圖形的不透明度都會套用此設定值。預設值為1.0
+    > 顏色
+    >> * `fillStyle = color` --顏色-填滿圖形
+    >> * `strokeStyle = color` --顏色-勾勒圖形
+    >> * `globalAlpha = transparencyValue` --透明度-0.0(全透明)~1.0(不透明)。一旦設定畫布上所有圖形的不透明度都會套用此設定值。預設值為1.0
 
-    由CSS3顏色值能夠指定不透明度，我們也可以如下面一般，設定strokeStyle以及fillStyle來變更不透明度。
+    >> 由CSS3顏色值能夠指定不透明度，我們也可以如下面一般，設定strokeStyle以及fillStyle來變更不透明度。
     ```js
     // Assigning transparent colors to stroke and fill style`
     ctx.strokeStyle = "rgba(255,0,0,0.5)";
     ctx.fillStyle = "rgba(255,0,0,0.5)";    
     ```
-    >線條樣式
-    >>* `lineWidth = value` --寬度
+    > 線條樣式
+    >> * `lineWidth = value` --寬度
   * `` --
   * `` --
   * `` --
