@@ -28,46 +28,55 @@
 <body>
     <div id="content">
         <canvas id="canvas">
-            <!-- <P>you browser not support canvas!</P> -->
+            <P>you browser not support canvas!</P>
         </canvas>
         <canvas id="canvas2"> </canvas>
     </div>
 
     <script>
-
-        window.onload = function () {
-            var canvas = document.getElementById('canvas')
+        window.onpageshow = animation();
+        function animation() {
+            let canvas = document.getElementById('canvas')
+            let canvas2 = document.getElementById('canvas2')
             let ctx = canvas.getContext('2d');
+            let ctx2 = canvas2.getContext("2d");
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-            let canvas2 = document.getElementById('canvas2')
             canvas2.width = window.innerWidth;
             canvas2.height = window.innerHeight;
-            let ctx2 = canvas2.getContext("2d");
 
-            let opa = 0;
             let centerX = (window.innerWidth / 2) - 40;
             let centerY = window.innerHeight / 2;
+            let transparent = 0;
             let speed = 0;
 
             function drawBrand() {
                 let requsetParamter = requestAnimationFrame(drawBrand);
                 ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
                 ctx.font = "40px Times New Roman";
-                ctx.fillStyle = `rgba(0, 0, 0, ${opa})`;
+                ctx.fillStyle = `rgba(0, 0, 0, ${transparent})`;
                 let txt = "Halsey";
                 ctx.fillText(`${txt}`, centerX, centerY);
-                opa += 0.02;
+                transparent += 0.02;
 
-                if (opa >= 1) {
-                    opa = 1
+                if (transparent >= 1) {
+                    transparent = 1
                     cancelAnimationFrame(requsetParamter);
                     drawBar();
                 }
 
                 function drawBar() {
-                    let barLength = ctx.measureText(txt).width;
                     let requsetParamter2 = requestAnimationFrame(drawBar);
+                    let barLength = ctx.measureText(txt).width;
+                    strokebar()
+                    fillbar(speed);
+                    speed += 1;
+                    if (speed >= barLength) {
+                        speed == barLength;
+                        cancelAnimationFrame(requsetParamter2);
+                        canvas.style.visibility = "hidden";
+                        canvas2.style.visibility = "hidden";
+                    }
                     function strokebar() {
                         ctx2.strokeStyle = "rgba(0, 8, 0, 0.2)";
                         ctx2.strokeRect(centerX, centerY + 10, barLength, 5)
@@ -76,13 +85,7 @@
                         ctx2.strokeStyle = "rgba(0, 0, 0, 1)";
                         ctx2.strokeRect(centerX, centerY + 10, speed, 5)
                     }
-                    strokebar()
-                    fillbar(speed);
-                    speed += 1;
-                    if (speed >= barLength) {
-                        speed == barLength;
-                        cancelAnimationFrame(requsetParamter2);
-                    }
+
                 }
             };
 
