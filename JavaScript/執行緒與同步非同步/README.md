@@ -10,11 +10,11 @@
 4. javascript:URL -URL的主體為任意的JS字串,要由JS直譯器執行
    
 ## JavaScript程式的執行 -單執行緒()
-第一階段- document載入,程式依出現順序執行,從script來的程式被執行;一旦所有script執行完畢進入第二階段
-第二階段- 非同步(asynchronous)、事件驅動(event-driven)
- -`load`事件為事件驅動最早發生的事件之一,表示文件已被完整載入可供操作
- -`<script defer>`script會暫緩,等document載入與解析完後才執行
- -`<script async>`script載入完成會先執行,document會暫緩解析
+第一階段- document載入,程式依出現順序執行,從script來的程式被執行;一旦所有script執行完畢進入第二階段 <br>
+第二階段- 非同步(asynchronous)、事件驅動(event-driven) <br>
+ -`load`事件為事件驅動最早發生的事件之一,表示文件已被完整載入可供操作 <br>
+ -`<script defer>`script會暫緩,等document載入與解析完後才執行 <br>
+ -`<script async>`script載入完成會先執行,document會暫緩解析 <br>
 
  ## JavaScript程式的執行(詳細)
  1. Web創建Document物件並開始解析.將Element物件與nodes加入文件 (document.readyState = "loading")
