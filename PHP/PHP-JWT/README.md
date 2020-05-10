@@ -13,3 +13,5 @@ Composer是PHP的軟體包管理系統
 - use a proxy server to connet to internet 不打勾
 - 安裝完成後重啟電腦
 
+## 步驟3. 安裝PHP-JWT
+`composer require firebase/php-jwt`
