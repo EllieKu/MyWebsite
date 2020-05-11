@@ -19,48 +19,48 @@ JWT由三個部分組成並用( . )連接：
 2. Payload
 3. Signature
 JWT典型樣子：
-    > xxxxx.yyyyy.zzzzz
+    `xxxxx.yyyyy.zzzzz`
 
 ### Header
-典型由兩個部分組成：
-    + **alg**：對JWT簽章的演算法(如HMAC SHA256 or RSA)，對於未加密的JWT值必須設置為none。
-    + **typ**(optimal)：JWT本身的媒體類型。此參數僅助於將JWT與帶有JOSE header的其他對象混合使用的情況。實際上這種情況很少發生。如果存在則此聲明應設置值JWT。
-    + **cty**(optimal)：內容類型。大多數 JWT 攜帶特定的聲明以及任意數據作為其 payload 的一部分，在這種情況下，不得設置內容類型聲明。對於 payload 本身是 JWT 自己（巢狀 JWT）的實例，此聲明必須存在並帶有值 JWT，用來表示需要進一步處理巢狀的 JWT。而巢狀 JWT 很少見，因此 cty 聲明很少出現在 header 中。
+典型由兩個部分組成：<br>
++ **alg**：對JWT簽章的演算法(如HMAC SHA256 or RSA)，對於未加密的JWT值必須設置為none。
++ **typ**(optimal)：JWT本身的媒體類型。此參數僅助於將JWT與帶有JOSE header的其他對象混合使用的情況。實際上這種情況很少發生。如果存在則此聲明應設置值JWT。
++ **cty**(optimal)：內容類型。大多數 JWT 攜帶特定的聲明以及任意數據作為其 payload 的一部分，在這種情況下，不得設置內容類型聲明。對於 payload 本身是 JWT 自己（巢狀 JWT）的實例，此聲明必須存在並帶有值 JWT，用來表示需要進一步處理巢狀的 JWT。而巢狀 JWT 很少見，因此 cty 聲明很少出現在 header 中。
 舉例：
-    ```JS
-    {
-        "alg": "HS256",
-        "typ": "JWT"
-    }
-    ```
+```JS
+{
+    "alg": "HS256",
+    "typ": "JWT"
+}
+```
 ### Payload
 包含聲明-有關實體(通常是用戶)與其他資訊。有三種聲明類型如下：
-    + **Registered claims**：
-        + **iss**(optimal)：(issueer)JWT的發行方<br>
-            值：區分大小寫string / URL
-        + **sub**(optimal)：(subject)JWT的主題(用戶)<br>
-            值：區分大小寫string / URL
-        + **aud**(optimal)：(audience)JWT的目標收件人<br>
-            值：區分大小寫string / URL / array
-        + **exp**(optimal)：(expiration)JWT的到期時間<br>
-            值：NumericDate([UNIX時間](https://zh.wikipedia.org/wiki/UNIX%E6%97%B6%E9%97%B4))
-        + **nbf**(optimal)：(not before time)JWT的開始時間(exp的相反)<br>
-            值：NumericDate([UNIX時間](https://zh.wikipedia.org/wiki/UNIX%E6%97%B6%E9%97%B4))
-        + **iat**(optimal)：(issued at time)JWT的發行時間，可用於確定JWT的年齡
-            值：NumericDate([UNIX時間](https://zh.wikipedia.org/wiki/UNIX%E6%97%B6%E9%97%B4))
-        + **jti**(optimal)：(JWT ID)唯一標識符，可用於防止JWT衝突
-            值：區分大小寫string
-    + **Public Claims**：聲明名稱可以由使用JWT的人員隨意定義。但為防止衝突，任何新的Claim Name應該在IANA "JSON Web Token Claims"註冊，或是抗衝突名稱命名
-    + **Private Claims**：JWT使用者可以同意使用聲明名稱，可能會發生衝突，因此應謹慎使用
++ **Registered claims**：
+    + **iss**(optimal)：(issueer)JWT的發行方<br>
+        值：區分大小寫string / URL
+    + **sub**(optimal)：(subject)JWT的主題(用戶)<br>
+        值：區分大小寫string / URL
+    + **aud**(optimal)：(audience)JWT的目標收件人<br>
+        值：區分大小寫string / URL / array
+    + **exp**(optimal)：(expiration)JWT的到期時間<br>
+        值：NumericDate([UNIX時間](https://zh.wikipedia.org/wiki/UNIX%E6%97%B6%E9%97%B4))
+    + **nbf**(optimal)：(not before time)JWT的開始時間(exp的相反)<br>
+        值：NumericDate([UNIX時間](https://zh.wikipedia.org/wiki/UNIX%E6%97%B6%E9%97%B4))
+    + **iat**(optimal)：(issued at time)JWT的發行時間，可用於確定JWT的年齡<br>
+        值：NumericDate([UNIX時間](https://zh.wikipedia.org/wiki/UNIX%E6%97%B6%E9%97%B4))
+    + **jti**(optimal)：(JWT ID)唯一標識符，可用於防止JWT衝突<br>
+        值：區分大小寫string
++ **Public Claims**：聲明名稱可以由使用JWT的人員隨意定義。但為防止衝突，任何新的Claim Name應該在IANA "JSON Web Token Claims"註冊，或是抗衝突名稱命名
++ **Private Claims**：JWT使用者可以同意使用聲明名稱，可能會發生衝突，因此應謹慎使用
 ### Signature
 要創建簽名需要指定演算法對encoded header,encoded payload, a secret結合簽章<br>
 以HMAC 使用 SHA-256為例：
-    ```JS
-    HMACSHA256(
-    base64UrlEncode(header) + "." +
-    base64UrlEncode(payload),
-    secret)
-    ```
+```JS
+HMACSHA256(
+base64UrlEncode(header) + "." +
+base64UrlEncode(payload),
+secret)
+```
 
 
 ## 參考來源
