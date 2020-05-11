@@ -10,16 +10,16 @@ JWT 的全名是JSON Web Token，是一種基於開放標準(RFC 7519)，它定�
 > + [數位簽章(Digital Signature)](https://zh.wikipedia.org/wiki/%E6%95%B8%E4%BD%8D%E7%B0%BD%E7%AB%A0)
 
 ## 使用時機
-+ 授權(Authorization)：這是很常見 JWT 的使用方式，例如使用者從 Client 端登入後，該使用者再次對 Server 端發送請求的時候，會夾帶著 JWT，允許使用者存取該 token 有權限的資源。單一登錄(Single Sign On)是當今廣泛使用 JWT 的功能之一，因為它的成本較小並且可以在不同的網域(domain)中輕鬆使用。
-+ 訊息交換(Information Exchange)：JWT 可以透過公鑰/私鑰來做簽章，讓我們可以知道是誰發送這個 JWT，此外，由於簽章是使用 header 和 payload 計算的，因此還可以驗證內容是否遭到篡改。
++ **授權(Authorization)**：這是很常見 JWT 的使用方式，例如使用者從 Client 端登入後，該使用者再次對 Server 端發送請求的時候，會夾帶著 JWT，允許使用者存取該 token 有權限的資源。單一登錄(Single Sign On)是當今廣泛使用 JWT 的功能之一，因為它的成本較小並且可以在不同的domain中輕鬆使用。
++ **訊息交換(Information Exchange)**：JWT 可以透過公鑰/私鑰來做簽章，讓我們可以知道是誰發送這個 JWT，此外，由於簽章是使用 header 和 payload 計算的，因此還可以驗證內容是否遭到篡改。
 
 ## 結構
-JWT由三個部分組成並用<font color=#FF0000> . </font>連接：
+JWT由三個部分組成並用<font color="#FF0000"> . </font>連接：
 1. Header
 2. Payload
 3. Signature
 JWT典型樣子：
-> <font color=#FF0000>xxxxx.yyyyy.zzzzz</font>
+> <font color="#FF0000">xxxxx.yyyyy.zzzzz</font>
 
 ## 參考來源
 1. https://jwt.io/introduction/
