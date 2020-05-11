@@ -14,12 +14,17 @@ JWT 的全名是JSON Web Token，是一種基於開放標準(RFC 7519)，它定�
 + **訊息交換(Information Exchange)**：JWT 可以透過公鑰/私鑰來做簽章，讓我們可以知道是誰發送這個 JWT，此外，由於簽章是使用 header 和 payload 計算的，因此還可以驗證內容是否遭到篡改。
 
 ## 結構
-JWT由三個部分組成並用<font color="#FF0000"> . </font>連接：
+JWT由三個部分組成並用( . )連接：
 1. Header
 2. Payload
 3. Signature
 JWT典型樣子：
-> <font color="#FF0000">xxxxx.yyyyy.zzzzz</font>
+>xxxxx.yyyyy.zzzzz
 
+### Header
+典型由兩個部分組成：
+    + **alg**：對JWT進行簽章的演算法(如HMAC SHA256 or RSA)，對於未加密的JWT值必須設置為none。
+    + <span style="color:red;">到底支不支援</span>
+    + `<span style="color:red;">到底支不支援</span>`
 ## 參考來源
 1. https://jwt.io/introduction/
