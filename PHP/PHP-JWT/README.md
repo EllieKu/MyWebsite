@@ -15,3 +15,6 @@ Composer是PHP的軟體包管理系統
 
 ## 步驟3. 安裝PHP-JWT
 `composer require firebase/php-jwt`
+
+## 參考來源
+1. https://github.com/firebase/php-jwt

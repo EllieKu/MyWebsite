@@ -18,8 +18,8 @@ JWT由三個部分組成並用( . )連接：
 1. Header
 2. Payload
 3. Signature
-JWT典型樣子：
-    `xxxxx.yyyyy.zzzzz`
+JWT典型樣子：<br>
+`xxxxx.yyyyy.zzzzz`
 
 ### Header
 典型由兩個部分組成：<br>
