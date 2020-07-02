@@ -1,6 +1,5 @@
 # pug
-
-pug是一個對空白敏感的HTML模板編輯器,
+pug是一個對空白敏感的HTML模板編輯器。
 
 ## API
 ### Methods
@@ -24,3 +23,22 @@ pug是一個對空白敏感的HTML模板編輯器,
 
 ### Properties
 -  `pug.filters` -自定義過濾器hash table。和options-- `filters`相同，但是為全局應用。與`options.filters`同時出現時filters options 優先選擇。
+
+### Options
+option | type | default | description
+-------|------|-------|------------------
+filename | string | 'Pug' | 需被編譯的文件名
+basedir | string | -- | 絕對定位的根目錄
+doctype | string | -- | 詳見 [doctype說明](https://pugjs.org/zh-cn/language/doctype.html)
+filters | object | undefined | 存放自定義過濾器的Hash table
+self | boolean | false | 是否使用叫`self`的命名空間來存放局部變量。此可加速編譯，但相對於原用`variable`來訪問局部變量，需改寫成`self.variable`
+debug | boolean | -- | 當設置為 *true* 時**編譯產生的函數**會紀錄到標準輸出
+compileDebug | boolean | -- | 當設置為 *true* 時**源代碼**會紀錄到標準輸出，用於提供更詳細的錯誤訊息
+globals | array<string> | -- | 向模板添加全局名字
+cache | boolean | false | 若為 *true* 則編譯出的函數會被緩存，此時必須有`filename`作為cache key。僅用於`render`
+inlineRuntimeFunctions | boolean | false | 相對於使用require來獲取函數,是否直接嵌入函數 (`compileClient`default=true)
+name | string | 'template' | 模板函數的名字,僅用於`compileClient`
+pretty | boolean | false | 不建議使用
+
+ ## 資料來源
+ Pug -- https://pugjs.org/api/getting-started.html
