@@ -4,6 +4,7 @@
 + 使用`<router-view>`渲染
 
 ```HTML
+<!-- HTML -->
 <div id="app">
   <h1>Hello App!</h1>
   <p>
