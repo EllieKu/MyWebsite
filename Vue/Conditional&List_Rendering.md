@@ -49,6 +49,14 @@
     - `splice()`    
     - `sort()`
     - `reverse()`
+- 數組替換: 不會變更原始array, 返回一個新數組
+    - `filter()`
+    - `concat()`
+    - `slice()`
+- 顯示過濾/排序後的結果: 可使用`computed`或`methods`來返回
+- 用`<template>`渲染一段包含多個元素的內容
+
+
 ---
 ### 參考資料
 [条件渲染](https://cn.vuejs.org/v2/guide/conditional.html)
